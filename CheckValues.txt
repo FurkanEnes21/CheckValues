@@ -1,0 +1,13 @@
+Sub CheckValues()
+  Dim lastRow As Long
+  lastRow = Cells(Rows.Count, "A").End(xlUp).Row
+  For i = 1 To lastRow
+    If Cells(i, "A").Font.Bold = False And Cells(i, "D").Font.Bold = False Then
+      If Cells(i, "A").Value = Cells(i, "D").Value Then
+        Cells(i, "F").Value = "True"
+      Else
+        Cells(i, "F").Value = "False"
+      End If
+    End If
+  Next i
+End Sub
